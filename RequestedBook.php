@@ -48,6 +48,13 @@
         <div class="arrival-heading">
             <strong>Requested Books</strong>
         </div>
+        <?php
+            require("db.php");
+            $Query = "SELECT * FROM `requests`";
+            $Result = mysqli_query($con, $Query);
+            $numrows = mysqli_num_rows($Result);
+            if($numrows != 0){
+        ?>
         <div style=" margin-left: auto; width :auto;
   margin-right: auto;">
             <div class="container" style="padding-top:20px;">
@@ -66,10 +73,6 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    require("db.php");
-                                    $Query = "SELECT * FROM `requests`";
-                                    $Result = mysqli_query($con, $Query);
-                                    $sn = 0;
                                     while ($Row = $Result->fetch_assoc()) {
                                     ?>
                                         <tr>
@@ -81,7 +84,12 @@
                                         </tr>
                                     <?php
                                         $sn++;
-                                    } ?>
+                                    } }else{
+                                        ?>
+                                        <a>No Request</a>
+                                        <?php
+                                    }?>
+                                    
                                 </tbody>
                             </table>
                         </div>
