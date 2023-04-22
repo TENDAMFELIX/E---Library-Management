@@ -78,7 +78,7 @@
                                             <td><?php echo $Row['Phone'] ; ?></td>
                                             <td><?php echo $Row['Street'] ; ?></td>
                                             <td><?php echo $Row['State'] ; ?></td>
-                                            <td><a href="http://localhost/E-Library/UpdateUser.php?UserId=<?php echo $Row['id'];?>"><input type="submit" value="Edit"></a></td>
+                                            <td><a href="http://localhost/E-Library-Management/UpdateUser.php?UserId=<?php echo $Row['id'];?>"><input type="submit" value="Edit"></a></td>
                                         </tr>
                                     <?php
                                         $sn++;

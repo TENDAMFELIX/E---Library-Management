@@ -98,7 +98,7 @@ unset($_SESSION['BookId']);
             ?>
                     <div class="product-box">
                         <div class="product-img">
-                        <a href="http://localhost/E-Library/IssueBookSelected.php?BookId=<?php echo $row['BookId']; ?>">
+                        <a href="http://localhost/E-Library-Management/IssueBookSelected.php?BookId=<?php echo $row['BookId']; ?>">
                                 <img src="<?php echo $row['Image'] ?>">
                             </a>
                         </div>

@@ -79,8 +79,8 @@
                                                 <td><?php echo $sn; ?></td>
                                                 <td><?php echo $Row['UserId']; ?></td>
                                                 <td><?php echo $Row['Title']; ?></td>
-                                                <td><a href="http://localhost/E-Library/AddBook.php"><input type="submit" value="Add Book"></a></td>
-                                                <td><a href="http://localhost/E-Library/DeclineRequest.php?RequestId=<?php echo $Row['RequestId']; ?>"><input type="submit" style="background-color: red;" value="Decline"></a></td>
+                                                <td><a href="http://localhost/E-Library-Management/AddBook.php"><input type="submit" value="Add Book"></a></td>
+                                                <td><a href="http://localhost/E-Library-Management/DeclineRequest.php?RequestId=<?php echo $Row['RequestId']; ?>"><input type="submit" style="background-color: red;" value="Decline"></a></td>
                                             </tr>
                                         <?php
                                             $sn++;

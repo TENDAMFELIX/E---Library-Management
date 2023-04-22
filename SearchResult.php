@@ -58,7 +58,7 @@
                 ?>
                         <div class="product-box">
                             <div class="product-img">
-                                <a href="http://localhost/E-Library/IssueBookSelected.php?BookId=<?php echo $row['BookId']; ?>">
+                                <a href="http://localhost/E-Library-Management/IssueBookSelected.php?BookId=<?php echo $row['BookId']; ?>">
                                     <img src="<?php echo $row['Image'] ?>">
                                 </a>
                             </div>
@@ -74,7 +74,7 @@
                     echo "<a>No book available with title " . $title . ", kindly contact admin to request book</a>";
                     ?>
                     <div style="padding-top: 100px;"></div>
-                    <a href="http://localhost/E-Library/RequestBook.php?UserId=<?php echo $UserId;?>&title=<?php echo $title;?>"><input type="submit" value="Request book" /></a>
+                    <a href="http://localhost/E-Library-Management/RequestBook.php?UserId=<?php echo $UserId;?>&title=<?php echo $title;?>"><input type="submit" value="Request book" /></a>
                 <?php
                 }
                 ?>

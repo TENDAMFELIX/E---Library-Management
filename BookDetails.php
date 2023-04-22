@@ -129,7 +129,7 @@ session_start();
                         $Result = mysqli_query($con, $Query)->fetch_assoc()['username'];
                         echo "Issued By "  ?> <?php echo "<a style = " . "" . "> $Result </a>"; ?>
                         <div style="padding-top: 10px;"></div>
-                        <a href="http://localhost/E-Library/BookReturned.php?BookId=<?php echo $BookId;?>"><input type="submit" value="Returned" /></a>
+                        <a href="http://localhost/E-Library-Management/BookReturned.php?BookId=<?php echo $BookId;?>"><input type="submit" value="Returned" /></a>
                     <?php
                     }
                     ?>
