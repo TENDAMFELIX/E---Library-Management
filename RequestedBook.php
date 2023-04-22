@@ -53,6 +53,7 @@
         $Query = "SELECT * FROM `requests`";
         $Result = mysqli_query($con, $Query);
         $numrows = mysqli_num_rows($Result);
+        $sn = 0;
         if ($numrows != 0) {
         ?>
             <div style=" margin-left: auto; width :auto;
@@ -87,7 +88,7 @@
                                         }
                                     } else {
                                         ?>
-                                        <a>No Request</a>
+                                        <a style="padding-top:20px">No Request Present</a>
                                     <?php
                                     } ?>
 
