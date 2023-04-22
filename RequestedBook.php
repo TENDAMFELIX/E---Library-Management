@@ -49,54 +49,55 @@
             <strong>Requested Books</strong>
         </div>
         <?php
-            require("db.php");
-            $Query = "SELECT * FROM `requests`";
-            $Result = mysqli_query($con, $Query);
-            $numrows = mysqli_num_rows($Result);
-            if($numrows != 0){
+        require("db.php");
+        $Query = "SELECT * FROM `requests`";
+        $Result = mysqli_query($con, $Query);
+        $numrows = mysqli_num_rows($Result);
+        if ($numrows != 0) {
         ?>
-        <div style=" margin-left: auto; width :auto;
+            <div style=" margin-left: auto; width :auto;
   margin-right: auto;">
-            <div class="container" style="padding-top:20px;">
-                <div class="row">
-                    <div class="col-sm-8">
-                        <?php echo $deleteMsg ?? ''; ?>
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>S.N</th>
-                                        <th>User Id</th>
-                                        <th>Book Title</th>
-                                        <th></th>
-                                        <th></th>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    while ($Row = $Result->fetch_assoc()) {
-                                    ?>
+                <div class="container" style="padding-top:20px;">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <?php echo $deleteMsg ?? ''; ?>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
                                         <tr>
-                                            <td><?php echo $sn; ?></td>
-                                            <td><?php echo $Row['UserId']; ?></td>
-                                            <td><?php echo $Row['Title']; ?></td>
-                                            <td><a href="http://localhost/E-Library/AddBook.php"><input type="submit" value="Add Book"></a></td>
-                                            <td><a href="http://localhost/E-Library/DeclineRequest.php?RequestId=<?php echo $Row['RequestId'];?>"><input type="submit" style="background-color: red;" value="Decline"></a></td>
-                                        </tr>
-                                    <?php
-                                        $sn++;
-                                    } }else{
+                                            <th>S.N</th>
+                                            <th>User Id</th>
+                                            <th>Book Title</th>
+                                            <th></th>
+                                            <th></th>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        while ($Row = $Result->fetch_assoc()) {
+                                        ?>
+                                            <tr>
+                                                <td><?php echo $sn; ?></td>
+                                                <td><?php echo $Row['UserId']; ?></td>
+                                                <td><?php echo $Row['Title']; ?></td>
+                                                <td><a href="http://localhost/E-Library/AddBook.php"><input type="submit" value="Add Book"></a></td>
+                                                <td><a href="http://localhost/E-Library/DeclineRequest.php?RequestId=<?php echo $Row['RequestId']; ?>"><input type="submit" style="background-color: red;" value="Decline"></a></td>
+                                            </tr>
+                                        <?php
+                                            $sn++;
+                                        }
+                                    } else {
                                         ?>
                                         <a>No Request</a>
-                                        <?php
-                                    }?>
-                                    
-                                </tbody>
-                            </table>
+                                    <?php
+                                    } ?>
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 </body>
 
