@@ -110,10 +110,20 @@ session_start();
                 $Result = mysqli_query($con, $Query)->fetch_assoc();
                 $Pages = $Result['Pages'];
                 $Tags = explode(',', $Result['Categories']);
+                $Author = explode(',',$Result['Authors']);
                 foreach ($Tags as $Name) {
                     if($Name != ""){
                 ?>
-                    
+                    <a style="border: 1px solid black; padding : 8px; border-radius:10px;"><?php echo $Name; ?></a>
+                <?php
+                    }
+                }
+                ?>
+                <div style="padding-top:25px;"></div>
+                <?php
+                foreach ($Author as $Name) {
+                    if($Name != ""){
+                ?>
                     <a style="border: 1px solid black; padding : 8px; border-radius:10px;"><?php echo $Name; ?></a>
                 <?php
                     }
@@ -125,7 +135,6 @@ session_start();
                     $Result = mysqli_query($con, $Query)->fetch_assoc();
                     if ($Result['Available'] == 0) {
                         $Query = "SELECT * FROM `users` WHERE id = (SELECT `StudentId` FROM `tblissuedbookdetails` WHERE BookId = $BookId);";
-                        
                         $Result = mysqli_query($con, $Query)->fetch_assoc()['username'];
                         echo "Issued By "  ?> <?php echo "<a style = " . "" . "> $Result </a>"; ?>
                         <div style="padding-top: 10px;"></div>

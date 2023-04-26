@@ -84,7 +84,7 @@ session_start();
             padding-top: 50px;">
         <div class="row">
             <div class="column">
-                <img height=250px src="<?php
+                <img height=280px src="<?php
                                         $BookId = $_GET['BookId'];
                                         require("db.php");
                                         $Query = "SELECT * from `books` where BookId = $BookId";
@@ -111,7 +111,20 @@ session_start();
                     ?></h2>
                 <?php
                 $Tags = explode(',', $Row2['Categories']);
+                $Author = explode(',',$Row2['Authors']);
                 foreach ($Tags as $Name) {
+                    if ($Name != "") {
+                ?>
+
+                        <a style="border: 1px solid black; padding : 8px; border-radius:10px;"><?php echo $Name; ?></a>
+                <?php
+
+                    }
+                }
+                ?>
+                <div style="padding-top: 25px;"></div>
+                <?php
+                foreach ($Author as $Name) {
                     if ($Name != "") {
                 ?>
 
