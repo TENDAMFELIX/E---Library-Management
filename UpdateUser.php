@@ -95,7 +95,7 @@ if (isset($_REQUEST['confirm'])) {
             <ul class="menu">
                 <li><a href="Source.php" target="_self">Books</a>
                 </li>
-                <li><a href="Users.php" target="_self">Users</a>
+                <li><a href="Users.php" target="_self" >Users</a>
                 </li>
                 <li><a href="MenShopping.php" target="_self">Add Book</a>
                 </li>

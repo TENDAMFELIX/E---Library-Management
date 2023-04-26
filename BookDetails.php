@@ -135,7 +135,7 @@ session_start();
                     ?>
                 </a>
                 <div style="padding-top: 10px;"></div>
-                <input type="submit" value="Unlist Book" />
+                <a href="http://localhost/E-Library-Management/UnlistBook.php?BookId=<?php echo $BookId;?>"><input type="submit" value="Unlist Book" /></a>
             </div>
         </div>
 
