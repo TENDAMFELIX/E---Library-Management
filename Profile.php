@@ -80,7 +80,9 @@
                             <a class="p-name"><?php echo $BookName ?></a>
                             <a class="p-name"><?php echo $IssueDate . " to " . $ReturnDate ?></a>
                             <?php
-                            if ($ReturnDate < date("d/m/Y")) {
+                            $date1 = new DateTime($ReturnDate);
+                            $date2 = new DateTime(date("d-m-Y"));
+                            if ($date1 < $date2) {
                             ?>
                                 <a class="p-name" style="color: red;">Due date gone past</a>
                             <?php

@@ -67,11 +67,11 @@ session_start();
                 </li>
                 <li><a href="Users.php" target="_self">Users</a>
                 </li>
-                <li><a href="MenShopping.php" target="_self">Add Book</a>
+                <li><a href="AddBook.php" target="_self">Add Book</a>
                 </li>
                 
                 
-                <li><a href="WomenShopping.php" target="_self">Categories</a></li>
+                <li><a href="RequestedBook.php" target="_self">Requested Books</a></li>
                 <li><a href="#"></a></li>
             </ul>
         </div>
@@ -143,7 +143,6 @@ session_start();
                     }
                     ?>
                 </a>
-                <div style="padding-top: 10px;"></div>
                 <a href="http://localhost/E-Library-Management/UnlistBook.php?BookId=<?php echo $BookId;?>"><input type="submit" value="Unlist Book" /></a>
             </div>
         </div>

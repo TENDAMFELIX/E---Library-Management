@@ -60,9 +60,9 @@
                             <span class="p-price">
                                 <a><?php
                                     if ($row['Available'] == 1)
-                                        echo "<a style = " . "color:green;" . ">Available</a>";
+                                        {}
                                     else
-                                        echo "<a style = " . "color:red;" . ">Not Available</a>";
+                                        echo "<a style = " . "color:red;" . ">Issued</a>";
                                     ?></a>
                             </span>
                         </div>

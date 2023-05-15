@@ -159,7 +159,7 @@
     if (isset($_REQUEST['title'])) {
         require("db.php");
         $Query = mysqli_query($con, "SELECT * FROM `books`");
-        $Id = mysqli_num_rows($Query) + 1;
+        $Id = mysqli_num_rows($Query) + 50;
         $title = $_POST['title'];
         $imagelink = $_POST['link'];
         $category = $_POST['category'];

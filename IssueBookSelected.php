@@ -1,6 +1,24 @@
 <?php
 session_start();
 ?>
+<?php
+if (isset($_POST['SubmissionDate'])) {
+    $CurrentDate = date('Y-m-d');
+    $Date = date('Y-m-d', strtotime($_POST['SubmissionDate']));
+    if ($Date < $CurrentDate) {
+        
+    } else {
+        $BookId = $_GET['BookId'];
+        $StudentId = $_SESSION['UserId'];
+        $Query = "INSERT INTO `tblissuedbookdetails`(`BookId`, `StudentID`, `ReturnDate`, `RetrunStatus`, `fine`) VALUES ($BookId,$StudentId,'$Date' , 0 , 0)";
+        $UpdateQuery = "UPDATE `books` SET `Available` = 0 where `BookId` = $BookId";
+        require("db.php");
+        $Update = mysqli_query($con, $Query);
+        $Update = mysqli_query($con, $UpdateQuery);
+        header("Location: Profile.php");
+    }
+}
+?>
 <html>
 
 <head>
@@ -111,7 +129,7 @@ session_start();
                     ?></h2>
                 <?php
                 $Tags = explode(',', $Row2['Categories']);
-                $Author = explode(',',$Row2['Authors']);
+                $Author = explode(',', $Row2['Authors']);
                 foreach ($Tags as $Name) {
                     if ($Name != "") {
                 ?>
@@ -140,24 +158,7 @@ session_start();
                     <div style="padding-top: 5px;"></div>
                     <input type="submit" value="Issue Book">
                 </form>
-                <?php
-                if (isset($_POST['SubmissionDate'])) {
-                    $CurrentDate = date('Y-m-d');
-                    $Date = date('Y-m-d', strtotime($_POST['SubmissionDate']));
-                    if ($Date < $CurrentDate) {
-                        echo "<a>Return date is invalid, kindly correct</a>";
-                    } else {
-                        $BookId = $_GET['BookId'];
-                        $StudentId = $_SESSION['UserId'];
-                        $Query = "INSERT INTO `tblissuedbookdetails`(`BookId`, `StudentID`, `ReturnDate`, `RetrunStatus`, `fine`) VALUES ($BookId,$StudentId,'$Date' , 0 , 0)";
-                        $UpdateQuery = "UPDATE `books` SET `Available` = 0 where `BookId` = $BookId";
-                        require("db.php");
-                        $Update = mysqli_query($con, $Query);
-                        $Update = mysqli_query($con, $UpdateQuery);
-                        header("Location: Profile.php");
-                    }
-                }
-                ?>
+
             </div>
         </div>
 
